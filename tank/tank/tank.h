@@ -30,6 +30,11 @@ public:
 public:
 	afx_msg void OnAppAbout();
 	DECLARE_MESSAGE_MAP()
+
+private: // 初始化gdi渲染器
+	ULONG_PTR m_tokenGdiplus;
+	Gdiplus::GdiplusStartupInput input;
+	Gdiplus::GdiplusStartupOutput output;
 };
 
 extern CtankApp theApp;

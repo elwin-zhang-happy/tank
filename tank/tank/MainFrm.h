@@ -3,7 +3,7 @@
 //
 
 #pragma once
-#include "ChildView.h"
+#include "CGame.h"
 
 class CMainFrame : public CFrameWnd
 {
@@ -15,6 +15,7 @@ protected:
 
 // 特性
 public:
+	afx_msg void OnTimer(UINT_PTR nIDEvent);
 
 // 操作
 public:
@@ -32,10 +33,18 @@ public:
 	virtual void Dump(CDumpContext& dc) const;
 #endif
 
-	CChildView    m_wndView;
-
 // 生成的消息映射函数
 protected:
+	int m_iHeight{ 600 };
+	int m_iWidth{ 800 };
+
+	enum ETimerId
+	{
+		ETimerIdGameLoop = 1
+	};
+
+	CGame m_game;
+
 	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
 	afx_msg void OnSetFocus(CWnd *pOldWnd);
 	DECLARE_MESSAGE_MAP()

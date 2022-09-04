@@ -183,7 +183,9 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="ChildView.h" />
+    <ClInclude Include="CGame.h" />
+    <ClInclude Include="CGameEntry.h" />
+    <ClInclude Include="CGameEntryMoveable.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="pch.h" />
@@ -192,7 +194,9 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ChildView.cpp" />
+    <ClCompile Include="CGame.cpp" />
+    <ClCompile Include="CGameEntry.cpp" />
+    <ClCompile Include="CGameEntryMoveable.cpp" />
     <ClCompile Include="MainFrm.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -209,6 +213,7 @@
     <None Include="res\tank.rc2" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="res\menu_background.png" />
     <Image Include="res\tank.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
