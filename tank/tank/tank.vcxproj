@@ -186,6 +186,8 @@
     <ClInclude Include="CGame.h" />
     <ClInclude Include="CGameEntry.h" />
     <ClInclude Include="CGameEntryMoveable.h" />
+    <ClInclude Include="CGameMenuBackground.h" />
+    <ClInclude Include="CGameMenuPannel.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="pch.h" />
@@ -197,6 +199,8 @@
     <ClCompile Include="CGame.cpp" />
     <ClCompile Include="CGameEntry.cpp" />
     <ClCompile Include="CGameEntryMoveable.cpp" />
+    <ClCompile Include="CGameMenuBackground.cpp" />
+    <ClCompile Include="CGameMenuPannel.cpp" />
     <ClCompile Include="MainFrm.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -213,8 +217,32 @@
     <None Include="res\tank.rc2" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="res\0.gif" />
+    <Image Include="res\1.gif" />
+    <Image Include="res\10.gif" />
+    <Image Include="res\11.gif" />
+    <Image Include="res\2.gif" />
+    <Image Include="res\3.gif" />
+    <Image Include="res\4.gif" />
+    <Image Include="res\5.gif" />
+    <Image Include="res\6.gif" />
+    <Image Include="res\7.gif" />
+    <Image Include="res\8.gif" />
+    <Image Include="res\9.gif" />
+    <Image Include="res\menu_1player_0.png" />
+    <Image Include="res\menu_1player_1.png" />
+    <Image Include="res\menu_2player_0.png" />
+    <Image Include="res\menu_2player_1.png" />
     <Image Include="res\menu_background.png" />
+    <Image Include="res\menu_key_player01_0.png" />
+    <Image Include="res\menu_key_player01_1.png" />
+    <Image Include="res\menu_key_player02_0.png" />
+    <Image Include="res\menu_key_player02_1.png" />
     <Image Include="res\tank.ico" />
+    <Image Include="res\tank_bot.png" />
+    <Image Include="res\tank_player1.png" />
+    <Image Include="res\tank_player2.png" />
+    <Image Include="res\坦克-恢复的.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

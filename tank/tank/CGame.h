@@ -1,4 +1,6 @@
 #pragma once
+#include "CGameMenuPannel.h"
+#include "CGameMenuBackground.h"
 
 class CGame
 {
@@ -16,8 +18,8 @@ public:
 private:
 	HWND m_hWnd; // 窗口
 	int m_fps{ 0 };
+
 private:
 	void GameRunDraw(); // 游戏绘图处理
 	void DrawFps(Gdiplus::Graphics &gh); // 绘制FPS
-	void DrawImage(Gdiplus::Graphics& gh); // 绘制图片
 }; 

@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "CGame.h"
 
+
 CGame::CGame()
 {
 }
@@ -47,10 +48,17 @@ void CGame::GameRunDraw()
 	gh.Clear(Color::White);
 	gh.ResetClip();
 
-	// 画出FPS
-	DrawFps(gh);
-	// 画出背景图片
-	DrawImage(gh);
+	{
+		CGameMenuPannel m_menuSelect;
+		CGameMenuBackground m_menu;
+		// 画出FPS
+		DrawFps(gh);
+		// 画背景
+		m_menu.Draw(gh);
+		// 画菜单
+		m_menuSelect.Draw(gh);
+	}
+	
 
 	bool result = ::BitBlt(hdc, 0, 0, rc.Width(), rc.Height(), m_dcMemory.GetSafeHdc(), 0, 0, SRCCOPY);
 	dc->DeleteDC();
@@ -80,15 +88,4 @@ void CGame::DrawFps(Gdiplus::Graphics &gh)
 
 		gh.DrawString(s.GetString(), -1, &font, origin, &brush);
 	}
-}
-
-void CGame::DrawImage(Gdiplus::Graphics& gh)
-{
-	// 游戏窗口口大小
-	CRect rc;
-	::GetClientRect(m_hWnd, rc);
-	// 载入需要绘制的图片
-	Gdiplus::Image* img = Gdiplus::Image::FromFile(_T("./res/menu_background.png"));
-	// 画出图片
-	gh.DrawImage(img, rc.left, rc.top, rc.Width(), rc.Height());
 }

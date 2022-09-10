@@ -42,6 +42,12 @@
     <ClInclude Include="CGameEntryMoveable.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="CGameMenuPannel.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CGameMenuBackground.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="tank.cpp">
@@ -62,6 +68,12 @@
     <ClCompile Include="CGameEntryMoveable.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="CGameMenuPannel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CGameMenuBackground.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="tank.rc">
@@ -78,6 +90,78 @@
       <Filter>resources</Filter>
     </Image>
     <Image Include="res\menu_background.png">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\menu_1player_0.png">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\menu_1player_1.png">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\0.gif">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\1.gif">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\2.gif">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\3.gif">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\4.gif">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\5.gif">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\6.gif">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\7.gif">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\8.gif">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\9.gif">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\10.gif">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\11.gif">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\menu_key_player01_0.png">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\menu_key_player01_1.png">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\menu_key_player02_0.png">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\menu_key_player02_1.png">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\tank_bot.png">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\tank_player1.png">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\tank_player2.png">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\坦克-恢复的.png">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\menu_2player_0.png">
+      <Filter>resources</Filter>
+    </Image>
+    <Image Include="res\menu_2player_1.png">
       <Filter>resources</Filter>
     </Image>
   </ItemGroup>
