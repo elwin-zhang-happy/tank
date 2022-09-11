@@ -2,6 +2,7 @@
 #include "CGameEntryMoveable.h"
 #include <tuple>
 #include <vector>
+
 using namespace std;
 class CGame;
 

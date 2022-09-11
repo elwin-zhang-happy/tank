@@ -54,6 +54,9 @@ CtankApp theApp;
 BOOL CtankApp::InitInstance()
 {
 
+	// gdi+初始化
+	Status s = GdiplusStartup(&m_tokenGdiplus, &input, &output);
+
 	// 若要创建主窗口，此代码将创建新的框架窗口
 	// 对象，然后将其设置为应用程序的主窗口对象
 	CFrameWnd* pFrame = new CMainFrame;
@@ -65,16 +68,9 @@ BOOL CtankApp::InitInstance()
 		WS_OVERLAPPEDWINDOW | FWS_ADDTOTITLE, nullptr,
 		nullptr);*/
 
-
-	m_pMainWnd = pFrame;
-
-
 	// 唯一的一个窗口已初始化，因此显示它并对其进行更新
 	pFrame->ShowWindow(SW_SHOW);
 	pFrame->UpdateWindow();
-	
-	// gdi+初始化
-	Status s = GdiplusStartup(&m_tokenGdiplus, &input, &output);
 	return TRUE;
 }
 

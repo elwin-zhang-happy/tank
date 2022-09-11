@@ -18,15 +18,17 @@ void CGame::SetHandle(HWND hWnd)
 bool CGame::EnterFrame(DWORD dwTime)
 {
 	GameRunDraw();
-	return false;
+	return true;
 }
 
 void CGame::OnMouseMove(UINT nFlags, CPoint point)
 {
+	m_menuSelect.OnMouseMove(nFlags, point);
 }
 
 void CGame::OnLButtonUp(UINT nFlags, CPoint point)
 {
+	m_menuSelect.OnLButtonUp(nFlags, point);
 }
 
 void CGame::GameRunDraw()
@@ -37,7 +39,7 @@ void CGame::GameRunDraw()
 	GetClientRect(m_hWnd, &rc);
 
 	CDC* dc = CClientDC::FromHandle(hdc);
-	// Ë«»º³å»æÍ¼Ê¹ÓÃ
+	// Ë«»º³å»æÍ¼Ê¹ÓÃ 
 	CDC m_dcMemory;
 	CBitmap bmp;
 	bmp.CreateCompatibleBitmap(dc,rc.Width(), rc.Height());
@@ -47,18 +49,13 @@ void CGame::GameRunDraw()
 	Gdiplus::Graphics gh(m_dcMemory.GetSafeHdc());
 	gh.Clear(Color::White);
 	gh.ResetClip();
-
-	{
-		CGameMenuPannel m_menuSelect;
-		CGameMenuBackground m_menu;
-		// »­³öFPS
-		DrawFps(gh);
-		// »­±³¾°
-		m_menu.Draw(gh);
-		// »­²Ëµ¥
-		m_menuSelect.Draw(gh);
-	}
 	
+	// »­³öFPS
+	DrawFps(gh);
+	// »­±³¾°
+	m_menu.Draw(gh);
+	// »­²Ëµ¥
+	m_menuSelect.Draw(gh);
 
 	bool result = ::BitBlt(hdc, 0, 0, rc.Width(), rc.Height(), m_dcMemory.GetSafeHdc(), 0, 0, SRCCOPY);
 	dc->DeleteDC();

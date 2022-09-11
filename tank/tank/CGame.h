@@ -18,6 +18,8 @@ public:
 private:
 	HWND m_hWnd; // 窗口
 	int m_fps{ 0 };
+	CGameMenuPannel m_menuSelect;
+	CGameMenuBackground m_menu;
 
 private:
 	void GameRunDraw(); // 游戏绘图处理

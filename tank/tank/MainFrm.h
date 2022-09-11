@@ -3,7 +3,7 @@
 //
 
 #pragma once
-#include "CGame.h"
+#include "tank.h"
 
 class CMainFrame : public CFrameWnd
 {

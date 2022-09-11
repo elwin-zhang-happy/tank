@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "CGameMenuPannel.h"
+#include "CGame.h"
 
 CGameMenuPannel::CGameMenuPannel()
 {
@@ -46,7 +47,7 @@ void CGameMenuPannel::SetParent(CGame* g)
 void CGameMenuPannel::Draw(Gdiplus::Graphics& gh) const
 {
 	// ªÊ÷∆±≥æ∞Õº
-	gh.DrawImage(m_imgBackground, m_rect);
+	//gh.DrawImage(m_imgBackground, m_rect);
 
 	for (auto menuItem : m_menuItems)
 	{
@@ -86,7 +87,6 @@ void CGameMenuPannel::OnLButtonUp(UINT nFlags, CPoint point)
 		auto rect = get<1>(menuItem.vImgInfoPtr[menuItem.index]);
 		if (rect.Contains(pt))
 		{
-			
 			return;
 		}
 
@@ -98,7 +98,6 @@ void CGameMenuPannel::OnLButtonUp(UINT nFlags, CPoint point)
 		auto &rect = get<1>(menuItem.vImgInfoPtr[menuItem.index]);
 		if (rect.Contains(pt))
 		{
-
 			return;
 		}
 
