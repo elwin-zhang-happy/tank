@@ -18,6 +18,7 @@ void CGame::SetHandle(HWND hWnd)
 bool CGame::EnterFrame(DWORD dwTime)
 {
 	GameRunDraw();
+	GameRunLogic();
 	return true;
 }
 
@@ -53,12 +54,68 @@ void CGame::GameRunDraw()
 	// 画出FPS
 	DrawFps(gh);
 	// 画背景
-	m_menu.Draw(gh);
+	//m_menu.Draw(gh);
 	// 画菜单
-	m_menuSelect.Draw(gh);
+	//m_menuSelect.Draw(gh);
+	// 画玩家1
+	m_player01.Draw(gh);
+	// 遍历所有子弹
+	/*for each (auto &blt in m_lstBullets)
+	{
+		blt.Draw(gh);
+	}*/
 
 	bool result = ::BitBlt(hdc, 0, 0, rc.Width(), rc.Height(), m_dcMemory.GetSafeHdc(), 0, 0, SRCCOPY);
 	dc->DeleteDC();
+}
+
+void CGame::GameRunLogic()
+{
+#define KEYDOWN(vk) (GetAsyncKeyState(vk) & 0x8000)
+	if (KEYDOWN(VK_LEFT))
+	{
+		m_player01.RotateLeft();
+	}
+	if (KEYDOWN(VK_RIGHT))
+	{
+		m_player01.RotateRight();
+	}
+	if (KEYDOWN(VK_UP))
+	{
+		m_player01.Forward();
+	}
+	if (KEYDOWN(VK_DOWN))
+	{
+		m_player01.BackWard();
+	}
+	if (KEYDOWN('M'))
+	{
+		CBullet blt;
+		if (m_player01.Fire(blt))
+		{
+			m_player01.RotateLeft();
+		}
+	}
+
+	for ( auto &blt : m_lstBullets)
+	{
+		blt.Move();
+	}
+
+	auto itRemove = std::remove_if(
+		m_lstBullets.begin(),
+		m_lstBullets.end(),
+		[](CBullet& blt) -> bool {
+			return blt.IsTimeout();
+		}
+	);
+	for (auto it = itRemove; it != m_lstBullets.end(); ++it)
+	{
+		it->SetActive(false);
+		it->GetOwner()->addBullet(*it);
+	}
+	
+	m_lstBullets.erase(itRemove, m_lstBullets.end());
 }
 
 void CGame::DrawFps(Gdiplus::Graphics &gh)

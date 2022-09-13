@@ -13,4 +13,9 @@
 #pragma comment(lib, "Gdiplus.lib")
 using namespace Gdiplus;
 
+#include <string>
+#include <vector>
+#include <list>
+#include <algorithm>
+
 #endif //PCH_H

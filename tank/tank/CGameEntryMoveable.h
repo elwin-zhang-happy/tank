@@ -10,7 +10,7 @@ class CGameEntryMoveable :
     public CGameEntry
 {
 private:
-    bool m_bActive{ false }; // 是否有效
+    bool m_bActive{ true }; // 是否有效
     RectF m_rect{ 0, 0, 100, 100 }; // 占用的区域
     float m_fSpeed{ 10 }; // 移动速度
     float m_direction{ 0 }; // 当前的角度
@@ -28,7 +28,6 @@ public:
     virtual void Draw(Gdiplus::Graphics &rhs) const = 0;
 
 
-/*************************可移动物体的共同属性**************************/
 public:
     // 右转
     virtual void RotateRitht();
